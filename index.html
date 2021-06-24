@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<script src="https://unpkg.com/vue@next"></script>
+		<title>Demo</title>
+	</head>
+	<body>
+
+		<header>
+			<ul>
+				<li><a href="index.html">Posts</a></li>
+				<li><a href="users.html">Users</a></li>
+			</ul>
+		</header>
+
+		<ul id='posts-list'>
+			<li class='post' v-for='post in posts' :key='post.postId'>
+				{{ post.postId}} {{post.text}} {{ post.timestamp }}
+			</li>
+		</ul>
+	</body>
+<style>
+.post {
+	border: 1px dotted;
+	background-color: teal;
+	padding: 2px;
+}
+</style>
+	<script>
+		fetch('http://35.39.165.238:3500/posts')
+	.then(data => data.json() )
+	.then(json => {
+		console.log(json);
+		Vue.createApp({
+			data(){
+				return {
+					posts: json
+				}
+			}
+		}).mount('#posts-list');
+	});
+	</script>
+</html>
