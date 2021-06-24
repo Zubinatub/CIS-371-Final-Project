@@ -17,7 +17,7 @@
 
 		<ul id='posts-list'>
 			<li class='post' v-for='post in posts' :key='post.postId'>
-				{{ post.postId}} {{post.text}} {{ post.timestamp }}
+				{{ newdate(post.timestamp) }} <br> {{ post.postId}} {{post.text}}
 			</li>
 		</ul>
 	</body>
@@ -29,16 +29,22 @@
 }
 </style>
 	<script>
-		fetch('http://35.39.165.238:3500/posts')
-	.then(data => data.json() )
-	.then(json => {
-		console.log(json);
-		Vue.createApp({
-			data(){
-				return {
-					posts: json
+	fetch('http://35.39.165.238:3500/posts')
+		.then(data => data.json() )
+		.then(json => {
+			console.log(json);
+			Vue.createApp({
+				data(){
+					return {
+						posts: json
+					}
+				},
+				methods:{
+					newdate(giventime){
+						var myDate = new Date( giventime );
+						return myDate.toLocaleString();
+					}
 				}
-			}
 		}).mount('#posts-list');
 	});
 	</script>
