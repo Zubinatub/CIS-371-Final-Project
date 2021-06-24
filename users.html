@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<script src="https://unpkg.com/vue@next"></script>
+		<title>Demo</title>
+	</head>
+	<body>
+
+		<header>
+			<ul>
+				<li><a href="index.html">Posts</a></li>
+				<li><a href="users.html">Users</a></li>
+			</ul>
+		</header>
+
+		<ul id='users-list'>
+			<li class='user' v-for='user in users' :key='user.id'>
+				<a :href="'http://35.39.165.238:3500/mod/' + user.id"> {{ user.firstName }} {{ user.lastName }} </a>
+			</li>
+		</ul>
+	</body>
+<style>
+.user {
+	border: 1px dotted;
+	background-color: yellow;
+}
+</style>
+	<script>
+		fetch('http://35.39.165.238:3500/users')
+	.then(data => data.json() )
+	.then(json => {
+		console.log(json);
+		Vue.createApp({
+			data(){
+				return {
+					users: json
+				}
+			}
+		}).mount('#users-list');
+	});
+	</script>
+</html>
