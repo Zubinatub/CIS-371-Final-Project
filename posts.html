@@ -19,7 +19,7 @@
 		<ul id='posts-list'>
 			<li class='post' v-for='post in posts' :key='post.postId'>
 				<h1>{{ newdate(post.timestamp) }}</h1>
-				<h2>User ID: {{ post.postId}}</h2>
+				<h2>Post ID: {{ post.postId}}</h2>
 				<p id='post'>{{post.text}}</p>
 			</li>
 		</ul>
