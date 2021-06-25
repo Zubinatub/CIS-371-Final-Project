@@ -1,0 +1,55 @@
+header{
+    background-color:steelblue;
+    border-bottom: 3px solid black;
+    margin-bottom: 50px;
+    text-align: center;
+}
+a:hover{
+    Color: green; 
+    text-decoration: none;
+    font-weight: none;
+}
+.linkcontainer{
+    list-style: none;
+    display: inline-block;
+    padding: 2em;
+    font-weight: bolder;
+}
+.links{
+    display: inline-block;
+    padding: 0 2em;
+    font-size: 2em; 
+}
+.post {
+    border: 1px dotted;
+    background-color: teal;
+    padding: 2px;
+    margin: 5px;
+    width: 350px;
+}
+.user {
+    border: 1px dotted;
+    background-color: yellow;
+    margin: 5px 0;
+}
+ul{
+    list-style: none;
+    display: inline-block;
+    padding: 2em;  
+    font-weight: bolder;
+}
+h1{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5em;
+}
+h2{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5em;
+}
+p{
+    padding: 5px;
+}
