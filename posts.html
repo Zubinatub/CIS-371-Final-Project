@@ -3,30 +3,28 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="finalproject.css">
 		<script src="https://unpkg.com/vue@next"></script>
-		<title>Demo</title>
+		<title>Posts</title>
 	</head>
 	<body>
 
 		<header>
-			<ul>
-				<li><a href="index.html">Posts</a></li>
-				<li><a href="users.html">Users</a></li>
+			<ul class='linkcontainer'>
+				<li class='links'><a href="posts.html">Posts</a></li>
+				<li class='links'><a href="users.html">Users</a></li>
 			</ul>
 		</header>
 
 		<ul id='posts-list'>
 			<li class='post' v-for='post in posts' :key='post.postId'>
-				{{ newdate(post.timestamp) }} <br> {{ post.postId}} {{post.text}}
+				<h1>{{ newdate(post.timestamp) }}</h1>
+				<h2>User ID: {{ post.postId}}</h2>
+				<p id='post'>{{post.text}}</p>
 			</li>
 		</ul>
 	</body>
 <style>
-.post {
-	border: 1px dotted;
-	background-color: teal;
-	padding: 2px;
-}
 </style>
 	<script>
 	fetch('http://35.39.165.238:3500/posts')
