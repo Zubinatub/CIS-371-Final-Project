@@ -21,13 +21,12 @@ router.get('/mod/:userid', function (req, res){
 	<head>
 		<meta charset="utf-8">
 		<script src="https://unpkg.com/vue@next"></script>
-		<title>Demo</title>
+		<title>Edit User</title>
 	</head>
 	<body>
-
 		<header>
 			<ul>
-				<li><a href="http://35.39.165.238/index.html">Posts</a></li>
+				<li><a href="http://35.39.165.238/posts.html">Posts</a></li>
 				<li><a href="http://35.39.165.238/users.html">Users</a></li>
 			</ul>
 		</header>
@@ -46,7 +45,36 @@ router.get('/mod/:userid', function (req, res){
         </form>
 	</body>
 <style>
+        header {
+        background-color:steelblue;
+        border-bottom: 3px solid black;
+        margin-bottom: 50px;
+        text-align: center;
+        }
+        a:hover
+        {
+                Color: green; 
+                text-decoration: none;
+                font-weight: none;
+        }
+        ul
+        {
+                list-style: none;
+                display: inline-block;
+                padding: 2em;
+                
+                font-weight: bolder;
+        }
+        li{
+                display: inline-block;
+                padding: 0 2em;
+                font-size: 2em; 
+        }
+        b{
+                text-decoration: underline;
+        }
 </style>
+
 	<script>
         const EventHandling = {
         methods: {
